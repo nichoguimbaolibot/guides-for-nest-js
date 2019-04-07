@@ -20,3 +20,9 @@ Functional Middleware
   console.log(`Request...`);
   next();
 };
+
+Global Middleware
+- implement in the main.ts
+const app = await NestFactory.create(ApplicationModule);
+app.use(logger);
+await app.listen(3000);

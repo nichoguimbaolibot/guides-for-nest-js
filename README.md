@@ -11,3 +11,12 @@ consumer
     { path: 'cats', method: RequestMethod.POST }
   )
   .forRoutes(CatsController);
+
+Multiple Middleware
+- consumer.apply(cors(), helmet(), logger).forRoutes(CatsController);
+
+Functional Middleware
+- export function logger(req, res, next) {
+  console.log(`Request...`);
+  next();
+};
